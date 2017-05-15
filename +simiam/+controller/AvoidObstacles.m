@@ -2,6 +2,8 @@ classdef AvoidObstacles < simiam.controller.Controller
 
 % Copyright (C) 2013, Georgia Tech Research Corporation
 % see the LICENSE file included with this software
+%
+% updated by Salman Hashmi
 
     properties
         
@@ -129,21 +131,23 @@ classdef AvoidObstacles < simiam.controller.Controller
             % Apply the transformation to robot frame.
             
             ir_distances_rf = zeros(3,n_sensors);
+            
             for i=1:n_sensors
+                % the pose of sensor i
                 x_s = obj.sensor_placement(1,i);
                 y_s = obj.sensor_placement(2,i);
                 theta_s = obj.sensor_placement(3,i);
-                
-                R = obj.get_transformation_matrix(0,0,0);
-                ir_distances_rf(:,i) = zeros(3,1);
+
+                R = obj.get_transformation_matrix(x_s,y_s,theta_s);
+                ir_distances_rf(:,i) = R*[ir_distances(i), 0, 1]';
             end
-            
+
             % Apply the transformation to world frame.
             
             [x,y,theta] = state_estimate.unpack();
             
-            R = obj.get_transformation_matrix(0,0,0);
-            ir_distances_wf = zeros(3,5);
+            R = obj.get_transformation_matrix(x,y,theta);
+            ir_distances_wf = R*ir_distances_rf
             
             %% END CODE BLOCK %%
             
@@ -153,7 +157,7 @@ classdef AvoidObstacles < simiam.controller.Controller
         
         function R = get_transformation_matrix(obj, x, y, theta)
             %% START CODE BLOCK %%
-            R = zeros(3,3);
+            R = [cos(theta), -sin(theta), x; sin(theta), cos(theta), y; 0, 0, 1];
             %% END CODE BLOCK %%
         end
         
