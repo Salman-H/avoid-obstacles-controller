@@ -80,7 +80,12 @@ classdef AvoidObstacles < simiam.controller.Controller
             
             n_sensors = length(robot.ir_array);
             sensor_gains = [0 0 0 0 0];
+            
             u_i = zeros(2,5);
+            for n = 1:5
+                u_i(1,n) = ir_distances_wf(1,n) - x;
+                u_i(2,n) = ir_distances_wf(2,n) - y;
+            end
             u_ao = sum(u_i,2);
             
             % Compute the heading and error for the PID controller
