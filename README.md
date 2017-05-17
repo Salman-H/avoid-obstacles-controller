@@ -10,13 +10,13 @@ the robot is located. To achieve this, obstacle coordinates for each InfraRed se
 <i>robot reference frame</i>, and then from the robot frame to the world frame.</p>
 
 <p>After successfully doing these transformations, the points detected by each of the five IR sensors can be located on the <i>world frame</i>:</p>
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/test_1_and_2_a.jpg" alt="" width="500">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/test_1_and_2_a.jpg" alt="" width="600">
 <br />
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/data_1_and_2_a.jpg" alt="" width="400">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/data_1_and_2_a.jpg" alt="" width="750">
 <br />
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/test_1_and_2_b.jpg" alt="" width="500">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/test_1_and_2_b.jpg" alt="" width="600">
 <br />
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/data_1_and_2_b.jpg" alt="" width="400">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/data_1_and_2_b.jpg" alt="" width="750">
 
 
 <h4>2. Obstacle Avoidance Heading</h4>
@@ -28,6 +28,6 @@ vector and the PID controller used to steer the robot to this heading to avoid a
 <br />
 <img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/sim_ao_3_b.jpg" alt="" width="600">
 <br />
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/plot_ao_3_a.jpg" alt="" width="750">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/plot_ao_3_a.jpg" alt="" width="600">
 <br />
-<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/plot_ao_3_b.jpg" alt="" width="750">
+<img src="https://github.com/Salman-H/avoid-obstacles-controller/blob/master/figures/plot_ao_3_b.jpg" alt="" width="600">
